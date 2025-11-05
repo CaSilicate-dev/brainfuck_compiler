@@ -44,10 +44,11 @@ fn main() {
     let mut ccode = r#"
         #include <stdio.h>
         #include <stdlib.h>
-        #define TAPE_SIZE "#.to_string();
+        #define TAPE_SIZE "#
+        .to_string();
     ccode += tlength.to_string().as_str();
     ccode += "\n";
-    ccode +=r#"
+    ccode += r#"
         int main(){unsigned char tape[TAPE_SIZE] = {0};unsigned char *ptr = tape;
     "#;
     for (i, c) in bfcode.chars().enumerate() {
